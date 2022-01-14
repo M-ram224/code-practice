@@ -727,25 +727,33 @@ var numMult= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ,15, 16, 17, 18, 19,
 // var filterArrayValues = [58, " ", "abcd", true, null, false, 0]
 
 // create a function that takes in a single argument
-function cleanArray(arr){
-    // filter through the array 
-    return arr.filter((item, index) => (
-        // if the array has false, null, 0, or " " then filter it out
-        if(item === false){
-            
-        }
-        arr.indexOf(item) 
-    ))
-
-}
-
-// Expected output --> [58, "abcd", true]
-
+// function cleanArray(arr){
+//     // filter through the array 
+//     return arr.filter((item) => item);
+// }
+// // Expected output --> [58, "abcd", true]
+// const clarr = cleanArray([58, "", "abcd", true, null, false, 0])
+// console.log(clarr);
 
 
 // Pre-fill: Write a function that takes in two numbers as arguments and returns an array the length of the first number filled with the second number.
 // fillArray = (6, 0)
 
+// function that takes in two num arguments
+function arrFill(length, fillVal){
+    // return one array the length of the first num, thats filled with the second num
+    // create new array to hold results
+    const results = []
+    // for loop start at 0, through the length of the arr
+    for(let i = 0; i < length; i++){
+        // push the fillVal into the results of the arr
+        results.push(fillVal)
+    }
+    // return the results arr filled with the fillVal, at the length of given number
+    return results
+}
+console.log(arrFill(4, 11));
+console.log(arrFill(6, 0));
 // expected output --> [0, 0, 0, 0, 0, 0]
 
 // fillArray = (4, 11)
