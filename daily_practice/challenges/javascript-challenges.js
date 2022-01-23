@@ -740,20 +740,20 @@ var numMult= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ,15, 16, 17, 18, 19,
 // fillArray = (6, 0)
 
 // function that takes in two num arguments
-function arrFill(length, fillVal){
-    // return one array the length of the first num, thats filled with the second num
-    // create new array to hold results
-    const results = []
-    // for loop start at 0, through the length of the arr
-    for(let i = 0; i < length; i++){
-        // push the fillVal into the results of the arr
-        results.push(fillVal)
-    }
-    // return the results arr filled with the fillVal, at the length of given number
-    return results
-}
-console.log(arrFill(4, 11));
-console.log(arrFill(6, 0));
+// function arrFill(length, fillVal){
+//     // return one array the length of the first num, thats filled with the second num
+//     // create new array to hold results
+//     const results = []
+//     // for loop start at 0, through the length of the arr
+//     for(let i = 0; i < length; i++){
+//         // push the fillVal into the results of the arr
+//         results.push(fillVal)
+//     }
+//     // return the results arr filled with the fillVal, at the length of given number
+//     return results
+// }
+// console.log(arrFill(4, 11));
+// console.log(arrFill(6, 0));
 // expected output --> [0, 0, 0, 0, 0, 0]
 
 // fillArray = (4, 11)
@@ -763,8 +763,20 @@ console.log(arrFill(6, 0));
 
 
 // Create a function named addUp that takes a number as an argument. Add up all the numbers from 1 to the number you passed to the function. For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
-// addUp = (4)
 
+// function that takes in a num as an argument
+function addUp(num){
+    // create an empty array to pass a the numbers from the loop to be added
+    const numsBeingAdded = []
+    // loop through the numbers 
+    for(let i=0; i<num; i++){
+        // adding each number looped to the given num with .valueOf()
+        numsBeingAdded.valueOf()
+    }
+    return numsBeingAdded
+}
+// addUp = (4)
+console.log(addUp(4))
 // Expected output --> 10
 
 // addUp = (13)
