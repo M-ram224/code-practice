@@ -767,24 +767,24 @@ var numMult= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ,15, 16, 17, 18, 19,
 // function that takes in a num as an argument
 function addUp(num){
     // create an empty array to pass a the numbers from the loop to be added
-    const numsBeingAdded = []
+    let currentSum = 0
     // loop through the numbers 
-    for(let i=0; i<num; i++){
+    for(let i=1; i<=num; i++){
         // adding each number looped to the given num with .valueOf()
-        numsBeingAdded.valueOf()
+        currentSum += i
     }
-    return numsBeingAdded
+    return currentSum
 }
 // addUp = (4)
 console.log(addUp(4))
 // Expected output --> 10
 
 // addUp = (13)
-
+console.log(addUp(13))
 // Expected output --> 91
 
 // addUp = (600)
-
+console.log(addUp(600))
 // Expected output --> 180300
 
 
