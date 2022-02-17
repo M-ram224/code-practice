@@ -2,13 +2,18 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Guessing Game</title>
   </head>
   <body>
     <h1>Guess a Number Between 1 and 100</h1>
-    <input type="number" placeholder="Enter a number" />
+    <div>
+      <label for="guess">
+        Enter a number: 
+      </label>
+      <input id="guess" name="number" type="number" placeholder="Enter a number" />
+      <button id="guessBtn" type="submit">Guess Number</button>
+    </div>
     <h3 id="output"></h3>
-    <button id="guessBtn" type="button">Guess Number</button>
     <script type="text/javascript" src="high-low-javascript-function.js"></script>
   </body>
 </html>

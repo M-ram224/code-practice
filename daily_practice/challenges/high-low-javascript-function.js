@@ -7,33 +7,79 @@
 // As a user, if I guess the number correctly I am notified that I won
 // STRETCH: As a user, if I have not guessed the correct number in seven tries I see a losing message
 
-// connect function to high-low-challenge.html file by connecting to the documents "output"
-var numInput = document.getElementById("output")
-// trying to create a button to click enter on the spacebar
-numInput.addEventListener("keyup", function(event){
-  // if the event keycode on the spacebar which is key 32
-  if (event.keyCode === 32) {
-    // prevent default action and click on the guessBtn
-    event.preventDefault()
-    document.getElementById("guessBtn").click()
+// set the space key to number 32
+const SPACE_KEY=32;
+const MAX_NUMBER_OF_GUESSES=10;
+// create local variables to use for initializeGame
+let randomNumber;
+let numberOfAttempts;
+
+// function that provides a new random number from 1-100
+function initializeGame() {
+  // set randomNumber to parse an integer into a string through a random number too 100 and set numberOfAttempts to 0
+  randomNumber = parseInt((Math.random() * 100) + 1);
+  numberOfAttempts = 0;
+}
+
+// setting the amount of guesses to be 10 with an alert, connecting to html file, and adding in the guess into the form
+function gradeTheGuess() {
+  // if the number of attempts is incremented more than 10, send alert saying what the right number was and also re-initializeGame
+  if (++numberOfAttempts > 10) {
+    alert(`Sorry you took too many guesses! The correct number was ${randomNumber}`);
+    initializeGame();
+    return;
+  } 
+
+  // local variable selecting first element in document.querySelector #guess connects to high-low-challenge.html inputed value
+  let guess = document.querySelector('#guess').value
+
+  // if the typeof guess === 'string', guess = the parseInt(guess)
+  if (typeof guess === 'string') {
+    guess = parseInt(guess);
   }
-})
+
+  // initialize result to highLowInput function below with inputed guess
+  const result = highLowInput(guess);
+  // initilize output to connect to element in high-low-challenge.html #output
+  const output = document.querySelector('#output')
+  // sending outputs content as the result from HighLowInput(guess)
+  output.textContent = result;
+}
+
+// connecting to html #guess to listen to event "keyup" event
+document.querySelector('#guess').addEventListener("keyup", function(event){
+  // if the event keycode on the spacebar, which is key 32, initiate gradeTheGuess funtion for everytime SPACE_KEY is pressed
+  if (event.keyCode === SPACE_KEY) {
+    gradeTheGuess();
+  }
+});
+
+// connect to html #guessbtn to listen to event 'click'
+document.querySelector('#guessBtn').addEventListener('click', function(event) {
+  // prevent default action to now intiatiate gradeTheGuess function
+  event.preventDefault();
+  gradeTheGuess();
+});
 
 // function that takes in a UserNum as an argument
 function highLowInput(userNum){
-  // loop through 1-100 to ouput either its too lor/high or correct
-  for(let i=1; i <= 100; i++){
-    if(userNum <= 71){
-      return `${userNum} is too low, but getting closer, try again!`
-    } else if(userNum >= 75){
-        return `${userNum} is too high, but getting closer, try again!`
-    } else if(userNum === 72){
-        return `${userNum} is low, but so close, try again!`
-    } else if(userNum === 74){
-        return `${userNum} is high, but so close, try again!`
-    } else if (userNum === 73){
-        return `${userNum} is correct, great job guessing!`
-    }
-    else `${userNum} is outside 1-100, try again with correct numbers to guess`
+  // if numbers are greater than 100 or less than 100 have them try again with correct numbers 
+  if (userNum > 100 || userNum < 1) {
+    return `${userNum} is outside 1-100, try again with correct numbers to guess`
+  } 
+  // if userNumber is equal to randomNumber generated -1, +1, or <, >, appropriate response to each. else if userName === RandomNumber generated it is correct
+  if (userNum === randomNumber - 1) {
+      return `${userNum} is low, but so close, try again!`
+  } else if (userNum === randomNumber + 1){
+      return `${userNum} is high, but so close, try again!`
+  } else if (userNum < randomNumber) {
+    return `${userNum} is too low, but getting closer, try again!`
+  } else if (userNum > randomNumber){
+      return `${userNum} is too high, but getting closer, try again!`
+  } else if (userNum === randomNumber) {
+      return `${userNum} is correct, great job guessing!`
   } 
 }
+
+// re-initializeGame function everytime we run through the game
+initializeGame();
