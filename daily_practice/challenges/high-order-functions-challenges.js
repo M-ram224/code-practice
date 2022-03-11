@@ -10,7 +10,7 @@ console.log(multiplyX10(arr1))
 
 
 // Write a function that takes in an array and returns a new array with only odd numbers
-// var arr2 = [2, 7, 3, 5, 8, 10, 13]
+var arr2 = [2, 7, 3, 5, 8, 10, 13]
 
 // funtion takes in a single argument
 function oddNumbersOnly(arr){
@@ -24,7 +24,7 @@ console.log(oddNumbersOnly(arr2))
 
 
 // Write a function that takes in an array of numbers and letters and returns a string with only the letters.
-// var comboArr = [7, "n", "i", "c", 10, "e", false, "w", 3, "o", "r", "k"]
+var comboArr = [7, "n", "i", "c", 10, "e", false, "w", 3, "o", "r", "k"]
 
 // takes only a single argument
 function lettersOnly(array){
@@ -46,17 +46,30 @@ var str = "javascript is awesome"
 
 // function that takes a single string
 function noVowels(str){
-  // filter through the array by its index
-  str.filter((vowels, index) =>{
+  // first split the string into an array
+  const splitString = str.split("")
+  console.log(splitString)
+  // map through the array by its index
+  return splitString.map((index) =>{
     // if the index === a, e, i, o, u, y return string without the vowels
-
-  })
-
+    if(index === /[aeiouyAEIOUY]/){
+        index = ""
+    } else {
+       return index
+      }
+  }).join("")
 }
 
-
+console.log(noVowels(str))
 
 // Create a function that takes in two arrays as arguments returns one array with no duplicate values.
 // var arr1 = [3, 7, 10, 5, 4, 3]
 
 // var arr2 = [7, 8, 2, 1, 5, 4]
+
+// function that takes in two array arguments
+// combine both arrays with .concat()
+// loop through the array and then
+// filter out any duplicates of the combined array
+// return the new combined array with no duplicates
+
