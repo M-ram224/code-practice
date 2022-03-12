@@ -49,13 +49,14 @@ function noVowels(str){
   // first split the string into an array
   const splitString = str.split("")
   console.log(splitString)
-  // map through the array by its index
-  return splitString.map((index) =>{
-    // if the index === a, e, i, o, u, y return string without the vowels
-    if(index === /[aeiouyAEIOUY]/){
-        index = ""
+  // map through the array by its letter
+  return splitString.filter((letter) =>{
+    // if the letter === a, e, i, o, u, y return string without the vowels
+    // a || e || i || o || u || y     /[aeiouyAEIOUY]/
+    if(letter.match(/[aeiouyAEIOUY]/)){
+        letter = ""
     } else {
-       return index
+       return letter
       }
   }).join("")
 }
@@ -63,13 +64,21 @@ function noVowels(str){
 console.log(noVowels(str))
 
 // Create a function that takes in two arrays as arguments returns one array with no duplicate values.
-// var arr1 = [3, 7, 10, 5, 4, 3]
+var arr1 = [3, 7, 10, 5, 4, 3]
 
-// var arr2 = [7, 8, 2, 1, 5, 4]
+var arr2 = [7, 8, 2, 1, 5, 4]
 
 // function that takes in two array arguments
-// combine both arrays with .concat()
-// loop through the array and then
-// filter out any duplicates of the combined array
-// return the new combined array with no duplicates
-
+function noDuplicates(arr1, arr2){
+  // combine both arrays with .concat()
+  const combinedArray = arr1.concat(arr2)
+  // filter out any duplicates of the combined array
+  return combinedArray.filter((number, index) =>{
+    for (let i = 0; i < combinedArray.length; i++){
+      combinedArray.indexOf(number) === index
+    }
+  })
+  // return the new combined array with no duplicates
+  
+}
+console.log(noDuplicates(arr1, arr2))
