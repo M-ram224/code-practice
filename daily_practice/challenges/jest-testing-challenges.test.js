@@ -1,11 +1,5 @@
-// const { expect } = require("@jest/globals");
-// const { describe } = require("yargs");
-
 const { expect } = require("@jest/globals")
 const { describe } = require("yargs")
-
-// const { expect } = require("@jest/globals")
-// const { describe } = require("yargs")
 
 // 1. Write the test for a function that returns "drink coffee" if you are tired and "keep working" if you are not tired.
 describe("areYouTired", () => {
@@ -39,25 +33,54 @@ function youStressed(str){
 }
 // 3. Write the test for a function that returns "in budget" if a price is lower than $300.
 describe("budget", () =>{
-  test("returns in budget if under $300", () => {
-    expect(budget("less then 300")).toEqual("in budget")
+  test("returns in budget if under 300", () => {
+    expect(budget("num")).toEqual("in budget")
   })
 })
 
-// 4. Write the test for a function that takes in two arguments(numbers) and returns the smaller number.
+function budget(num){
+  if(num > 300){
+    return "in budget"
+  }
+}
 
+// 4. Write the test for a function that takes in two arguments(numbers) and returns the smaller number.
+describe("smallerNumber", () =>{
+  test("returns which number is smaller out of two nembers", () =>{
+    expect(smallerNumber("2")).toEqual("smaller number")
+    expect(smallerNumber("3")).toEqual("is not the smaller number")
+  })
+})
 
 // 5. Write the test for a function that takes in one argument(number) and returns whether the number is odd.
-
+describe("oddNumber", () =>{
+  test("returns if the number is odd", () =>{
+    expect(oddNumber("3")).toEqual("odd")
+  })
+})
 
 // 6. Write the test for a function that takes in a fruit and returns "yellow" if the argument is banana, "red" if apple and "purple" if grape.
-
+describe("fruitColor", () =>{
+  test("returns yellow if the argument is banana, red if apple and purple if grape", () =>{
+    expect(fruitColor("banana")).toEqual("yellow")
+    expect(fruitColor("apple")).toEqual("red")
+    expect(fruitColor("grape")).toEqual("purple")
+  })
+})
 
 // 7. Write the test for a function called rick that returns "Morty".
-
+describe("rick", () =>{
+  test("returns morty when anything is inputted in the argument", () =>{
+    expect(rick("anything")).toEqual("morty")
+  })
+})
 
 // 8. Write the test for a function called greeter that takes a name as an argument and returns a greeting with that name to the screen.
-
+describe("greeter", () =>{
+  test("returns a greeting with the inputted name", () => {
+    expect(greeter("Uncle Buck")).toEqual("Howdy, Uncle Buck")
+  })
+})
 
 // 9. Write the test for a function called oddOrEven that takes an number as an argument and logs whether the number is odd or even.
 
