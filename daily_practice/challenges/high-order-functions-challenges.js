@@ -74,9 +74,8 @@ function noDuplicates(arr1, arr2){
   const combinedArray = arr1.concat(arr2)
   // filter out any duplicates of the combined array
   return combinedArray.filter((number, index) =>{
-    for (let i = 0; i < combinedArray.length; i++){
-      combinedArray.indexOf(number) === index
-    }
+    return combinedArray.indexOf(number) === index
+    
   })
   // return the new combined array with no duplicates
   
