@@ -134,21 +134,39 @@ let author = {
 }
 
 // Write the code that destructures the author object and makes the following work:
+let { name, genre } = author
 // console.log(`${name} is a ${genre} author`)
 // --> "H. G. Wells is a science fiction author"
 
 
 // 6. Consider this variable:
-// let pokeOne = {
-//     species: "Charmandar",
-//     pokemon_type: "Fire"
-// }
+describe('describePokemon', () =>{
+  test('destructures object pokeOne to return a description of the pokemon', () =>{
+    expect(describePokemon(object)).toEqual('Charmander is a Fire pokemon')
+  })
+  test('destructures object pokeTwo to return a description of the pokemon', () =>{
+    expect(describePokemon(object)).toEqual('Magikarp is a water pokemon')
+  })
+})
 
-// let pokeTwo = {
-//     species: "Magikarp",
-//     pokemon_type: "Water"
-// }
+let pokeOne = {
+    species: "Charmandar",
+    pokemon_type: "Fire"
+}
+
+let pokeTwo = {
+    species: "Magikarp",
+    pokemon_type: "Water"
+}
 // Write a function called describePokemon() that take an object like the ones above and uses destructuring to return a description of the Pokemon such that:
+var { species, pokemon_type } = pokeOne
+var { species, pokemon_type } = pokeTwo
+
+function describePokemon(object){
+
+  return `${object.this.species} is a ${object.this.pokemon_Type} pokemon`
+}
+
 // console.log(describePokemon(pokeOne))
 // --> "Charmandar is a Fire pokemon"
 // console.log(describePokemon(pokeTwo))
