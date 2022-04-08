@@ -140,15 +140,16 @@ let { name, genre } = author
 
 
 // 6. Consider this variable:
-describe('describePokemon', () =>{
+describe('describePokemon1', () =>{
   test('destructures object pokeOne to return a description of the pokemon', () =>{
-    expect(describePokemon(object)).toEqual('Charmander is a Fire pokemon')
-  })
-  test('destructures object pokeTwo to return a description of the pokemon', () =>{
-    expect(describePokemon(object)).toEqual('Magikarp is a water pokemon')
+    expect(describePokemon1(pokeOne)).toEqual('Charmandar is a Fire pokemon')
   })
 })
-
+describe('describePokemon2', () =>{
+  test('destructures object pokeTwo to return a description of the pokemon', () =>{
+    expect(describePokemon2(pokeTwo)).toEqual('Magikarp is a Water pokemon')
+  })
+})
 let pokeOne = {
     species: "Charmandar",
     pokemon_type: "Fire"
@@ -159,14 +160,15 @@ let pokeTwo = {
     pokemon_type: "Water"
 }
 // Write a function called describePokemon() that take an object like the ones above and uses destructuring to return a description of the Pokemon such that:
-var { species, pokemon_type } = pokeOne
-var { species, pokemon_type } = pokeTwo
 
-function describePokemon(object){
-
-  return `${object.this.species} is a ${object.this.pokemon_Type} pokemon`
+function describePokemon1(pokeOne){
+  const { species, pokemon_type } = pokeOne
+  return `${pokeOne.species} is a ${pokeOne.pokemon_type} pokemon`
 }
-
+function describePokemon2(pokeTwo){
+  const { species, pokemon_type } = pokeTwo
+  return `${pokeTwo.species} is a ${pokeTwo.pokemon_type} pokemon`
+}
 // console.log(describePokemon(pokeOne))
 // --> "Charmandar is a Fire pokemon"
 // console.log(describePokemon(pokeTwo))
