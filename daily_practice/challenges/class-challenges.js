@@ -27,17 +27,32 @@ class Coffee {
   }
 }
 // Write the code that makes a black coffee.
-var black = new Coffee()
+var coffeeOrder1 = new Coffee('Black', 0, 0)
 
-console.log(black.coffeeProfile(0))
+console.log(coffeeOrder1.coffeeProfile())
 // Write the code that makes a coffee with 1 cream and 2 sugars.
+var coffeeOrder2 = new Coffee('Cream and Sugar', 1, 2)
 
+console.log(coffeeOrder2.coffeeProfile())
 // Write the code that makes a coffee with 2 sugars. Then write the code that outputs the coffee's profile.
+var coffeeOrder3 = new Coffee('Two Sugars', 0, 2)
+
+console.log(coffeeOrder3.coffeeProfile())
 
 // Latte Maker
 // Write a Latte class that receives a flavor, a milk type and a number of shots.
+class Latte {
+  constructor(flavor, milkType, expressoShots){
+    this.flavor = flavor.toLowerCase()
+    this.milkType = milkType.toLowerCase()
+    this.expressoShots = expressoShots
+  }
+  // Write a method for your Latte class that outputs the latte's profile.
+  latteProfile(){
+    return(`${this.flavor}: ${this.milkType}, ${this.expressoShots}`)
+  }
 
-// Write a method for your Latte class that outputs the latte's profile.
+}
 
 // Write the code that makes a regular, single shot latte. Then, log the latte's profile.
 
