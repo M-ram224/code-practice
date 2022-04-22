@@ -1,35 +1,16 @@
-// Using the Coffee Maker Class, write tests and complete the challenges
-class Coffee {
-  constructor(type, cream, sugar){
-    this.type = type.toLowerCase()
-    this.cream = cream
-    this.sugar = sugar
-  }
+import { Coffee } from './class-challenges.js'
+import { Latte } from './class-challenges.js'
+jest.mock('./class-challenges')
 
-  coffeeProfile(){
-    return(`${this.type}: ${this.creams()}, ${this.sugars()}`)
-  }
 
-  creams(){
-    if (this.cream > 1){
-      return `${this.cream} creams`
-    } else {
-      return `${this.cream} cream`
-    }
-  }
+// Write the test and code that makes a black coffee.
+describe("coffeeOrder1", () =>{
+  test("returns the order of a black coffee", () =>{
+    expect(coffeeOrder1()).toEqual('black', 0, 0)
+  })
+})
 
-  sugars(){
-    if (this.sugar > 1){
-      return `${this.sugar} sugars`
-    } else {
-      return `${this.sugar} sugar`
-    }
-  }
-}
-// Write the code that makes a black coffee.
-var black = new Coffee()
-
-console.log(black.coffeeProfile(0))
+var coffeeOrder1 = new Coffee('Black', 0, 0)
 // Write the code that makes a coffee with 1 cream and 2 sugars.
 
 // Write the code that makes a coffee with 2 sugars. Then write the code that outputs the coffee's profile.

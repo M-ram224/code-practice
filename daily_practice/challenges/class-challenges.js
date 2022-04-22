@@ -1,5 +1,5 @@
 // Using the Coffee Maker Class, write tests and complete the challenges
-class Coffee {
+export class Coffee {
   constructor(type, cream, sugar){
     this.type = type.toLowerCase()
     this.cream = cream
@@ -27,21 +27,21 @@ class Coffee {
   }
 }
 // Write the code that makes a black coffee.
-var coffeeOrder1 = new Coffee('Black', 0, 0)
+// var coffeeOrder1 = new Coffee('Black', 0, 0)
 
-console.log(coffeeOrder1.coffeeProfile())
-// Write the code that makes a coffee with 1 cream and 2 sugars.
-var coffeeOrder2 = new Coffee('Cream and Sugar', 1, 2)
+// console.log(coffeeOrder1.coffeeProfile())
+// // Write the code that makes a coffee with 1 cream and 2 sugars.
+// var coffeeOrder2 = new Coffee('Cream and Sugar', 1, 2)
 
-console.log(coffeeOrder2.coffeeProfile())
-// Write the code that makes a coffee with 2 sugars. Then write the code that outputs the coffee's profile.
-var coffeeOrder3 = new Coffee('Two Sugars', 0, 2)
+// console.log(coffeeOrder2.coffeeProfile())
+// // Write the code that makes a coffee with 2 sugars. Then write the code that outputs the coffee's profile.
+// var coffeeOrder3 = new Coffee('Two Sugars', 0, 2)
 
-console.log(coffeeOrder3.coffeeProfile())
+// console.log(coffeeOrder3.coffeeProfile())
 
 // Latte Maker
 // Write a Latte class that receives a flavor, a milk type and a number of shots.
-class Latte {
+export class Latte {
   constructor(flavor, milkType, expressoShots){
     this.flavor = flavor.toLowerCase()
     this.milkType = milkType.toLowerCase()
